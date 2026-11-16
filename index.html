@@ -561,6 +561,11 @@ const INVITE = {
   music: "assets/music.mp3",
   events: [
     {
+      title: "Engagement",
+      date: "Saturday, 5 December 2026",
+      time: "6:00 PM"
+    },
+    {
       title: "Wedding",
       date: "Sunday, 6 December 2026",
       time: "12:38 PM · Abhijit Lagnam",
@@ -604,7 +609,7 @@ function applyInvite() {
       <h3>${ev.title}</h3>
       <p>${ev.date}</p>
       <p class="when">${ev.time}</p>
-      <p class="note">${ev.note}${ev.heart ? " " + HEART : ""}</p>
+      ${ev.note || ev.heart ? `<p class="note">${ev.note || ""}${ev.heart ? " " + HEART : ""}</p>` : ""}
     </div>
   `).join("");
 
